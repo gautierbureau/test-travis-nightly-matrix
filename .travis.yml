@@ -8,7 +8,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: g++
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -23,7 +22,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: g++
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -38,7 +36,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: g++
       env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -52,8 +49,7 @@ jobs:
       os: linux
       dist: trusty
       services: docker
-      sudo: required
-      COMPILER_COMMAND: g++
+      sudo: required 
       env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -68,7 +64,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: g++
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -83,7 +78,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: g++
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -98,7 +92,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: g++
       env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -113,7 +106,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: g++
       env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -128,7 +120,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: clang++
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -143,7 +134,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: clang++
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -158,7 +148,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: clang++
       env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -173,7 +162,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: clang++
       env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -188,7 +176,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: clang++
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -203,7 +190,6 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: clang++
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -218,53 +204,7 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: clang++
       env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION linux
-      script:
-        - echo build
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      COMPILER_COMMAND: clang++
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION linux
-      script:
-        - echo build
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      COMPILER_COMMAND: clang++
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=xenial
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION linux
-      script:
-        - echo build
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      COMPILER_COMMAND: clang++
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=beaver
       install:
         - echo $DYNAWO_BUILD_TYPE
         - echo $DYNAWO_CXX11_ENABLED
@@ -278,7 +218,48 @@ jobs:
       dist: trusty
       services: docker
       sudo: required
-      COMPILER_COMMAND: g++
+      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
+      install:
+        - echo $DYNAWO_BUILD_TYPE
+        - echo $DYNAWO_CXX11_ENABLED
+        - echo $COMPILER
+        - echo $DYNAWO_LIBRARY_TYPE
+        - echo $DISTRIBUTION
+      script:
+        - echo build linux
+    - stage: build
+      os: linux
+      dist: trusty
+      services: docker
+      sudo: required
+      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=xenial
+      install:
+        - echo $DYNAWO_BUILD_TYPE
+        - echo $DYNAWO_CXX11_ENABLED
+        - echo $COMPILER
+        - echo $DYNAWO_LIBRARY_TYPE
+        - echo $DISTRIBUTION
+      script:
+        - echo build linux
+    - stage: build
+      os: linux
+      dist: trusty
+      services: docker
+      sudo: required
+      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=beaver
+      install:
+        - echo $DYNAWO_BUILD_TYPE
+        - echo $DYNAWO_CXX11_ENABLED
+        - echo $COMPILER
+        - echo $DYNAWO_LIBRARY_TYPE
+        - echo $DISTRIBUTION
+      script:
+        - echo build linux
+    - stage: build
+      os: linux
+      dist: trusty
+      services: docker
+      sudo: required
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -291,7 +272,6 @@ jobs:
     - stage: build
       os: osx
       osx_image: xcode10.3
-      COMPILER_COMMAND: clang++
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -303,7 +283,6 @@ jobs:
     - stage: build
       os: osx
       osx_image: xcode10.3
-      COMPILER_COMMAND: clang++
       env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -315,7 +294,6 @@ jobs:
     - stage: build
       os: osx
       osx_image: xcode10.3
-      COMPILER_COMMAND: clang++
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC
       install:
         - echo $DYNAWO_BUILD_TYPE
@@ -327,7 +305,6 @@ jobs:
     - stage: build
       os: osx
       osx_image: xcode10.3
-      COMPILER_COMMAND: clang++
       env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC
       install:
         - echo $DYNAWO_BUILD_TYPE
