@@ -3,18 +3,18 @@ name: CI
 on: [push]
 
 jobs:
-    container-job:
-        runs-on: ubuntu-latest
-        
-        container:
-              image: dynaw/dynawo-travis:latest
-
-        steps:
-          - uses: actions/checkout@v1
-          - name: Git clone
-          - run: git clone https://github.com/dynawo/dynawo.git
+  build:
+    # container-job:
+    #     runs-on: ubuntu-latest
+    #
+    #     container:
+    #           image: dynaw/dynawo-travis:latest
+    #
+    #     steps:
+    #       - uses: actions/checkout@v1
+    #       - name: Git clone
+    #       - run: git clone https://github.com/dynawo/dynawo.git
           
-    vm-job:
        runs-on: ubuntu-latest
     
        steps:
