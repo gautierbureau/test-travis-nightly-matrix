@@ -324,5 +324,5 @@ jobs:
         - echo build windows
         - cl
         - cmake --version
-        - python
+        - python --version
         - git --version
