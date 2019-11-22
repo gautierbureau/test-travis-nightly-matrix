@@ -80,10 +80,8 @@ jobs:
       DYNAWO_LIBRARY_TYPE: SHARED
     steps:
       - name: Git clone
-        run: |
-          git config --global core.autocrlf input
-          git config --global core.eol lf
-          git clone https://github.com/dynawo/dynawo.git
+        shell: cmd
+        run: git config --global core.autocrlf input & git config --global core.eol lf & git clone https://github.com/dynawo/dynawo.git
       - name: Build
         shell: cmd
         run: |
