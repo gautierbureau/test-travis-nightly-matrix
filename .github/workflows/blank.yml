@@ -43,10 +43,12 @@ jobs:
         run: cat /etc/os-release
         
   build-docker-2:
-    container: dynawo/dynawo-travis:latest
+    runs-on: ubuntu-latest
     steps:    
-      - name: echo
-        run: cat /etc/os-release      
+      - run: |
+          cat /etc/os-release
+        container: dynawo/dynawo-travis:latest
+        name: cat /etc/os-release   
     # runs-on: ubuntu-latest
 #
 #     steps:
