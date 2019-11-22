@@ -3,51 +3,41 @@ name: CI
 on: [push]
 
 jobs:
-  build:
-    # container-job:
-    #     runs-on: ubuntu-latest
-    #
-    #     container:
-    #           image: dynaw/dynawo-travis:latest
-    #
-    #     steps:
-    #       - uses: actions/checkout@v1
-    #       - name: Git clone
-    #       - run: git clone https://github.com/dynawo/dynawo.git
-          
-       runs-on: ubuntu-latest
-       env:
-         DYNAWO_BUILD_TYPE: Release
-         DYNAWO_CXX11_ENABLED: YES 
-         DYNAWO_COMPILER: GCC 
-         DYNAWO_LIBRARY_TYPE: SHARED
-         DYNAWO_RESULTS_SHOW: "false"
-       steps:
-         - name: Git clone
-           run: git clone https://github.com/dynawo/dynawo.git
-         - name: Install packages
-           run: sudo apt-get update && sudo apt-get install -y git gcc g++ gfortran autoconf pkgconf automake make libtool cmake hwloc openjdk-8-jdk libblas-dev liblpsolve55-dev libarchive-dev doxygen doxygen-latex liblapack-dev libexpat1-dev libsqlite3-dev zlib1g-dev gettext patch clang python-pip libncurses5-dev libreadline-dev libdigest-perl-md5-perl unzip gcovr lcov libboost-all-dev qt4-qmake qt4-dev-tools lsb-release libxml2-utils python-lxml python-psutil wget libcurl4-openssl-dev rsync bash-completion
-         - name: Build Dynawo
-           run: |
-             cd dynawo
-             export DYNAWO_INSTALL_OPENMODELICA=$(pwd)/OpenModelica/Install
-             export DYNAWO_SRC_OPENMODELICA=$(pwd)/OpenModelica/Source
-             export DYNAWO_HOME=$(pwd)
-             util/envDynawo.sh build-user
+  # build:
+  #      runs-on: ubuntu-latest
+  #      env:
+  #        DYNAWO_BUILD_TYPE: Release
+  #        DYNAWO_CXX11_ENABLED: YES
+  #        DYNAWO_COMPILER: GCC
+  #        DYNAWO_LIBRARY_TYPE: SHARED
+  #        DYNAWO_RESULTS_SHOW: "false"
+  #      steps:
+  #        - name: Git clone
+  #          run: git clone https://github.com/dynawo/dynawo.git
+  #        - name: Install packages
+  #          run: sudo apt-get update && sudo apt-get install -y git gcc g++ gfortran autoconf pkgconf automake make libtool cmake hwloc openjdk-8-jdk libblas-dev liblpsolve55-dev libarchive-dev doxygen doxygen-latex liblapack-dev libexpat1-dev libsqlite3-dev zlib1g-dev gettext patch clang python-pip libncurses5-dev libreadline-dev libdigest-perl-md5-perl unzip gcovr lcov libboost-all-dev qt4-qmake qt4-dev-tools lsb-release libxml2-utils python-lxml python-psutil wget libcurl4-openssl-dev rsync bash-completion
+  #        - name: Build Dynawo
+  #          run: |
+  #            cd dynawo
+  #            export DYNAWO_INSTALL_OPENMODELICA=$(pwd)/OpenModelica/Install
+  #            export DYNAWO_SRC_OPENMODELICA=$(pwd)/OpenModelica/Source
+  #            export DYNAWO_HOME=$(pwd)
+  #            util/envDynawo.sh build-user
         
   build-docker:
     runs-on: ubuntu-latest
     container: dynawo/dynawo-travis:latest
+    env:
+      DYNAWO_BUILD_TYPE: Release
+      DYNAWO_CXX11_ENABLED: YES 
+      DYNAWO_COMPILER: GCC 
+      DYNAWO_LIBRARY_TYPE: SHARED
+      DYNAWO_RESULTS_SHOW: "false"
     steps:    
-      - name: cat
-        run: cat /etc/os-release  
-    # runs-on: ubuntu-latest
-#
-#     steps:
-#     - uses: actions/checkout@v1
-#     - name: Run a one-line script
-#       run: echo Hello, world!
-#     - name: Run a multi-line script
-#       run: |
-#         echo Add other actions to build,
-#         echo test, and deploy your project.
+      - name: Git clone
+        run: git clone https://github.com/dynawo/dynawo.git
+      - name: echo
+        run: |
+          pwd
+          ls
+          echo $DYNAWO_BUILD_TYPE
