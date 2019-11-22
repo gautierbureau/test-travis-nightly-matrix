@@ -39,5 +39,6 @@ jobs:
       - name: echo
         run: |
           pwd
+          cd $HOME
           ls
           echo $DYNAWO_BUILD_TYPE
