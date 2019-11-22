@@ -67,7 +67,7 @@ jobs:
           cd dynawo
           mkdir OpenModelica
           mv ../Dynawo_MacOS_latest/OpenModelica OpenModelica/Install
-          export DYNAWO_INSTALL_OPENMODELICA=$(pwd)/OpenModelica
+          export DYNAWO_INSTALL_OPENMODELICA=$(pwd)/OpenModelica/Install
           export DYNAWO_SRC_OPENMODELICA=$(pwd)/OpenModelica/Source
           export DYNAWO_HOME=$(pwd)
           export MACOSX_DEPLOYMENT_TARGET=10.13
@@ -83,9 +83,8 @@ jobs:
         run: git clone https://github.com/dynawo/dynawo.git
       - name: Build
         shell: cmd
-        run: |
-          cd dynawo
-          "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-          cl
-          cmake --version
-          echo %BOOST_ROOT_1_69_0%
+        run: cd dynawo
+        run: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+        run: cl
+        run: cmake --version
+        run: echo %BOOST_ROOT_1_69_0%
