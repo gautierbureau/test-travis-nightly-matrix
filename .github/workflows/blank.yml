@@ -34,8 +34,8 @@ jobs:
       DYNAWO_LIBRARY_TYPE: SHARED
       DYNAWO_RESULTS_SHOW: "false"
     steps:    
-      - name: Git clone
-        run: git clone https://github.com/dynawo/dynawo.git
+      # - name: Git clone
+      #   run: git clone https://github.com/dynawo/dynawo.git
       - name: echo
         run: |
           pwd
