@@ -313,3 +313,16 @@ jobs:
         - echo $DYNAWO_LIBRARY_TYPE
       script:
         - echo build macos
+    - stage: build
+      os: windows
+      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES DYNAWO_LIBRARY_TYPE=SHARED
+      install:
+        - echo $DYNAWO_BUILD_TYPE
+        - echo $DYNAWO_CXX11_ENABLED
+        - echo $DYNAWO_LIBRARY_TYPE
+      script:
+        - echo build windows
+        - cl
+        - cmake --version
+        - python
+        - git --version
