@@ -26,7 +26,7 @@ jobs:
     
   build-docker:
     runs-on: ubuntu-latest
-    container: dynaw/dynawo-travis:latest
+    container: dynawo/dynawo-travis:latest
     steps:
       - uses: actions/checkout@v1
       - name: Git clone
