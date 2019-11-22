@@ -42,6 +42,9 @@ jobs:
           id
           cd /home/dynawo_travis
           pwd
-          touch toto
-          ls
-          echo $DYNAWO_BUILD_TYPE
+          git clone https://github.com/dynawo/dynawo.git
+          cd dynawo
+          export DYNAWO_INSTALL_OPENMODELICA=$(pwd)/OpenModelica/Install
+          export DYNAWO_SRC_OPENMODELICA=$(pwd)/OpenModelica/Source
+          export DYNAWO_HOME=$(pwd)
+          util/envDynawo.sh build-user
