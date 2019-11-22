@@ -326,8 +326,8 @@ jobs:
         - dir
         - pwd
         - ls
-        - ls "/c/Program Files (x86)/"
-        - ls "/c/Program Files (x86)/Microsoft Visual/2017"
+        - ls "/c/Program Files (x86)/Microsoft Visual Studio 14.0"
+        - ls "/c/Program Files (x86)/Microsoft Visual Studio"
         - env
         #- "/BuildTools/Common7/Tools/"
         # - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\Common7\Tools\VsDevCmd.bat" -host_arch=amd64 -arch=amd64

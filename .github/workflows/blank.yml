@@ -3,6 +3,9 @@ name: CI
 on: [push]
 
 jobs:
+  build:
+    steps:
+      - run: echo hello
   # build-ubuntu:
   #      runs-on: ubuntu-latest
   #      env:
