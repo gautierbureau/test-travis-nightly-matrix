@@ -40,5 +40,7 @@ jobs:
         run: |
           pwd
           cd $HOME
+          pwd
+          touch toto
           ls
           echo $DYNAWO_BUILD_TYPE
