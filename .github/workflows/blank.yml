@@ -61,6 +61,7 @@ jobs:
         run: git clone https://github.com/dynawo/dynawo.git
       - name: Build
         run: |
+          curl -L -X GET https://api.github.com/repos/dynawo/dynawo/releases/latest
           curl -L $(curl -s -L -X GET https://api.github.com/repos/dynawo/dynawo/releases/latest | grep "Dynawo_MacOS" | grep url | cut -d '"' -f 4) -o Dynawo_MacOS_latest.zip
           unzip Dynawo_MacOS_latest.zip -d Dynawo_MacOS_latest > /dev/null
           cd dynawo
@@ -81,6 +82,7 @@ jobs:
       - name: Git clone
         run: git clone https://github.com/dynawo/dynawo.git
       - name: Build
+        shell: cmd
         run: |
           cd dynawo
           "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
