@@ -3,316 +3,316 @@ language: cpp
 
 jobs:
   include:
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required 
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=xenial
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=beaver
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo build linux
-    - stage: build
-      os: linux
-      dist: trusty
-      services: docker
-      sudo: required
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-        - echo $DISTRIBUTION
-      script:
-        - echo linux omc
-    - stage: build
-      os: osx
-      osx_image: xcode10.3
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-      script:
-        - echo build macos
-    - stage: build
-      os: osx
-      osx_image: xcode10.3
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-      script:
-        - echo build macos
-    - stage: build
-      os: osx
-      osx_image: xcode10.3
-      env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-      script:
-        - echo build macos
-    - stage: build
-      os: osx
-      osx_image: xcode10.3
-      env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC
-      install:
-        - echo $DYNAWO_BUILD_TYPE
-        - echo $DYNAWO_CXX11_ENABLED
-        - echo $COMPILER
-        - echo $DYNAWO_LIBRARY_TYPE
-      script:
-        - echo build macos
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=NO COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=xenial
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=beaver
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo build linux
+    # - stage: build
+    #   os: linux
+    #   dist: trusty
+    #   services: docker
+    #   sudo: required
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=GCC DYNAWO_LIBRARY_TYPE=SHARED DISTRIBUTION=fedora
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #     - echo $DISTRIBUTION
+    #   script:
+    #     - echo linux omc
+    # - stage: build
+    #   os: osx
+    #   osx_image: xcode10.3
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #   script:
+    #     - echo build macos
+    # - stage: build
+    #   os: osx
+    #   osx_image: xcode10.3
+    #   env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=SHARED
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #   script:
+    #     - echo build macos
+    # - stage: build
+    #   os: osx
+    #   osx_image: xcode10.3
+    #   env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #   script:
+    #     - echo build macos
+    # - stage: build
+    #   os: osx
+    #   osx_image: xcode10.3
+    #   env: DYNAWO_BUILD_TYPE=Debug DYNAWO_CXX11_ENABLED=YES COMPILER=CLANG DYNAWO_LIBRARY_TYPE=STATIC
+    #   install:
+    #     - echo $DYNAWO_BUILD_TYPE
+    #     - echo $DYNAWO_CXX11_ENABLED
+    #     - echo $COMPILER
+    #     - echo $DYNAWO_LIBRARY_TYPE
+    #   script:
+    #     - echo build macos
     - stage: build
       os: windows
       env: DYNAWO_BUILD_TYPE=Release DYNAWO_CXX11_ENABLED=YES DYNAWO_LIBRARY_TYPE=SHARED
@@ -322,6 +322,7 @@ jobs:
         - echo $DYNAWO_LIBRARY_TYPE
       script:
         - echo build windows
+        - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\Common7\Tools\VsDevCmd.bat" -host_arch=amd64 -arch=amd64
         - cl
         - cmake --version
         - python --version
