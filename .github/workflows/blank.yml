@@ -39,7 +39,6 @@ jobs:
     steps:
       - name: Container
         uses: docker://dynawo/dynawo-travis:latest
-        run: git clone https://github.com/dynawo/dynawo.git
       - name: echo
         run: cat /etc/os-release
     # runs-on: ubuntu-latest
