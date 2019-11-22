@@ -39,7 +39,8 @@ jobs:
       - name: echo
         run: |
           pwd
-          cd $HOME
+          id
+          cd /home/dynawo_travis
           pwd
           touch toto
           ls
