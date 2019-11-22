@@ -10,12 +10,9 @@ jobs:
               image: dynaw/dynawo-travis:latest
 
         steps:
-          - env:
-            DYNAWO_BUILD_TYPE: Release
           - uses: actions/checkout@v1
           - name: Git clone
           - run: git clone https://github.com/dynawo/dynawo.git
-          - run: echo $DYNAWO_BUILD_TYPE
           
     vm-job:
        runs-on: ubuntu-latest
