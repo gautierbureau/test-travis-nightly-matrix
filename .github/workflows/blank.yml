@@ -86,7 +86,4 @@ jobs:
         run: |
           cd dynawo
           dir
-          "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-          cl
-          cmake --version
-          echo %BOOST_ROOT_1_69_0%
+          C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat & cl & cmake --version & echo %BOOST_ROOT_1_69_0%
