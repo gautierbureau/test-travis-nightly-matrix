@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 jobs:
-  # build:
+  # build-ubuntu:
   #      runs-on: ubuntu-latest
   #      env:
   #        DYNAWO_BUILD_TYPE: Release
@@ -48,30 +48,30 @@ jobs:
   #         export DYNAWO_SRC_OPENMODELICA=$(pwd)/OpenModelica/Source
   #         export DYNAWO_HOME=$(pwd)
   #         util/envDynawo.sh build-user
-  build-macos:
-    runs-on: macos-latest
-    env:
-      DYNAWO_BUILD_TYPE: Release
-      DYNAWO_CXX11_ENABLED: YES 
-      DYNAWO_COMPILER: CLANG 
-      DYNAWO_LIBRARY_TYPE: SHARED
-      DYNAWO_RESULTS_SHOW: "false"
-    steps:    
-      - name: Git clone
-        run: git clone https://github.com/dynawo/dynawo.git
-      - name: Build
-        run: |
-          curl -L -X GET https://api.github.com/repos/dynawo/dynawo/releases/latest
-          curl -L $(curl -s -L -X GET https://api.github.com/repos/dynawo/dynawo/releases/latest | grep "Dynawo_MacOS" | grep url | cut -d '"' -f 4) -o Dynawo_MacOS_latest.zip
-          unzip Dynawo_MacOS_latest.zip -d Dynawo_MacOS_latest > /dev/null
-          cd dynawo
-          mkdir OpenModelica
-          mv ../Dynawo_MacOS_latest/OpenModelica OpenModelica/Install
-          export DYNAWO_INSTALL_OPENMODELICA=$(pwd)/OpenModelica/Install
-          export DYNAWO_SRC_OPENMODELICA=$(pwd)/OpenModelica/Source
-          export DYNAWO_HOME=$(pwd)
-          export MACOSX_DEPLOYMENT_TARGET=10.13
-          util/envDynawo.sh build-user
+  # build-macos:
+  #   runs-on: macos-latest
+  #   env:
+  #     DYNAWO_BUILD_TYPE: Release
+  #     DYNAWO_CXX11_ENABLED: YES
+  #     DYNAWO_COMPILER: CLANG
+  #     DYNAWO_LIBRARY_TYPE: SHARED
+  #     DYNAWO_RESULTS_SHOW: "false"
+  #   steps:
+  #     - name: Git clone
+  #       run: git clone https://github.com/dynawo/dynawo.git
+  #     - name: Build
+  #       run: |
+  #         curl -L -X GET https://api.github.com/repos/dynawo/dynawo/releases/latest
+  #         curl -L $(curl -s -L -X GET https://api.github.com/repos/dynawo/dynawo/releases/latest | grep "Dynawo_MacOS" | grep url | cut -d '"' -f 4) -o Dynawo_MacOS_latest.zip
+  #         unzip Dynawo_MacOS_latest.zip -d Dynawo_MacOS_latest > /dev/null
+  #         cd dynawo
+  #         mkdir OpenModelica
+  #         mv ../Dynawo_MacOS_latest/OpenModelica OpenModelica/Install
+  #         export DYNAWO_INSTALL_OPENMODELICA=$(pwd)/OpenModelica/Install
+  #         export DYNAWO_SRC_OPENMODELICA=$(pwd)/OpenModelica/Source
+  #         export DYNAWO_HOME=$(pwd)
+  #         export MACOSX_DEPLOYMENT_TARGET=10.13
+  #         util/envDynawo.sh build-user
   build-windows:
     runs-on: windows-latest
     env:
@@ -86,4 +86,4 @@ jobs:
         run: |
           cd dynawo
           dir
-          C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat & cl & cmake --version & echo %BOOST_ROOT_1_69_0%
+          "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" & cl & cmake --version & echo %BOOST_ROOT_1_69_0%
