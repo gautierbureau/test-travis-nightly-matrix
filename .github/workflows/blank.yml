@@ -43,7 +43,7 @@ jobs:
         run: cat /etc/os-release
         
   build-docker-2:
-    container: docker://dynawo/dynawo-travis:latest
+    container: dynawo/dynawo-travis:latest
     steps:    
       - name: echo
         run: cat /etc/os-release      
