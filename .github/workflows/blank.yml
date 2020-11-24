@@ -1,13 +1,20 @@
 name: CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Hello
         run: echo hello
+
+      - name: Checkout sources
+        uses: actions/checkout@v1
+
+      - name: Log
+        run: git log -2
 
       - name: Update Docker Hub
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
