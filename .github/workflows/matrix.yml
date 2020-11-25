@@ -26,6 +26,15 @@ jobs:
           DYNAWO_LIBRARY_TYPE: ${{ matrix.library-type }}
         run: echo $BUILD_TYPE $CXX11_ENABLED $COMPILER $DYNAWO_LIBRARY_TYPE
 
+      - name: Echo tests
+        env:
+          BUILD_TYPE: ${{ matrix.build-type }}
+          CXX11_ENABLED: ${{ matrix.cxx11-standard }}
+          COMPILER: ${{ matrix.compiler }}
+          DYNAWO_LIBRARY_TYPE: ${{ matrix.library-type }}
+        if: ${{ matrix.build-type }} == 'Debug' && ${{ matrix.library-type }} == 'SHARED'
+        run: echo Tests
+
   macos:
     name: MacOS
     runs-on: macos-latest
