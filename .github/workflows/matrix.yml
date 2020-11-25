@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   linux:
-    name: Linux ${{ matrix.os }} (${{ matrix.build-type }}, ${{ matrix.cxx11-standard }}, ${{ matrix.library-type }}, ${{ matrix.library-type }})
+    name: Linux ${{ matrix.os }} (${{ matrix.build-type }}, ${{ matrix.compiler }}, ${{ matrix.cxx11-standard }}, ${{ matrix.library-type }})
     runs-on: ubuntu-latest
     container:
       image: dynawo/dynawo-travis-nightly-${{ matrix.os }}:latest
@@ -16,15 +16,19 @@ jobs:
         cxx11-standard: [YES, NO]
         compiler: [GCC, CLANG]
         library-type: [SHARED, STATIC]
+    env:
+      BUILD_TYPE: ${{ matrix.build-type }}
+      CXX11_ENABLED: ${{ matrix.cxx11-standard }}
+      COMPILER: ${{ matrix.compiler }}
+      DYNAWO_LIBRARY_TYPE: ${{ matrix.library-type }}
 
     steps:
       - name: Echo
-        env:
-          BUILD_TYPE: ${{ matrix.build-type }}
-          CXX11_ENABLED: ${{ matrix.cxx11-standard }}
-          COMPILER: ${{ matrix.compiler }}
-          DYNAWO_LIBRARY_TYPE: ${{ matrix.library-type }}
         run: echo $BUILD_TYPE $CXX11_ENABLED $COMPILER $DYNAWO_LIBRARY_TYPE
+
+      - name: Echo tests
+        if: ${{ matrix.build-type == 'Debug' && matrix.library-type == 'SHARED' }}
+        run: echo Tests
 
   macos:
     name: MacOS
@@ -36,9 +40,4 @@ jobs:
         library-type: [SHARED, STATIC]
     steps:
       - name: Echo
-        env:
-          BUILD_TYPE: ${{ matrix.build-type }}
-          CXX11_ENABLED: YES
-          COMPILER: CLANG
-          DYNAWO_LIBRARY_TYPE: ${{ matrix.library-type }}
         run: echo $BUILD_TYPE $CXX11_ENABLED $COMPILER $DYNAWO_LIBRARY_TYPE
