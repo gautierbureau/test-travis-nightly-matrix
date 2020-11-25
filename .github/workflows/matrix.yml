@@ -1,0 +1,44 @@
+name: Matrix
+
+on: [push]
+
+jobs:
+  linux:
+    name: Linux ${{ matrix.os }} (${{ matrix.build-type }}, ${{ matrix.cxx11-standard }}, ${{ matrix.library-type }}, ${{ matrix.library-type }})
+    runs-on: ubuntu-latest
+    container:
+      image: dynawo/dynawo-travis-nightly-${{ matrix.os }}:latest
+      options: --user root
+    strategy:
+      matrix:
+        os: [fedora, bionic]
+        build-type: [Release, Debug]
+        cxx11-standard: [YES, NO]
+        compiler: [GCC, CLANG]
+        library-type: [SHARED, STATIC]
+
+    steps:
+      - name: Echo
+        env:
+          BUILD_TYPE: ${{ matrix.build-type }}
+          CXX11_ENABLED: ${{ matrix.cxx11-standard }}
+          COMPILER: ${{ matrix.compiler }}
+          DYNAWO_LIBRARY_TYPE: ${{ matrix.library-type }}
+        run: echo $BUILD_TYPE $CXX11_ENABLED $COMPILER $DYNAWO_LIBRARY_TYPE
+
+  macos:
+    name: MacOS
+    runs-on: macos-latest
+
+    strategy:
+      matrix:
+        build-type: [Release, Debug]
+        library-type: [SHARED, STATIC]
+    steps:
+      - name: Echo
+        env:
+          BUILD_TYPE: ${{ matrix.build-type }}
+          CXX11_ENABLED: YES
+          COMPILER: CLANG
+          DYNAWO_LIBRARY_TYPE: ${{ matrix.library-type }}
+        run: echo $BUILD_TYPE $CXX11_ENABLED $COMPILER $DYNAWO_LIBRARY_TYPE
