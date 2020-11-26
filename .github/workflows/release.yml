@@ -1,0 +1,14 @@
+name: Release
+
+on: release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hello
+        run: echo hello
+
+      - name: Checkout sources
+        uses: actions/checkout@v1
