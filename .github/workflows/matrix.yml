@@ -7,7 +7,7 @@ jobs:
     name: Linux ${{ matrix.os }} (${{ matrix.build-type }}, ${{ matrix.compiler }}, ${{ matrix.cxx11-standard }}, ${{ matrix.library-type }})
     runs-on: ubuntu-latest
     container:
-      image: dynawo/dynawo-travis-nightly-${{ matrix.os }}:latest
+      image: dynawo/dynawo-ci-nightly-${{ matrix.os }}:latest
       options: --user root
     strategy:
       matrix:
