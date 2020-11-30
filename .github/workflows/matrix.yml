@@ -21,10 +21,11 @@ jobs:
       CXX11_ENABLED: ${{ matrix.cxx11-standard }}
       COMPILER: ${{ matrix.compiler }}
       DYNAWO_LIBRARY_TYPE: ${{ matrix.library-type }}
+      TEST_ENV: ${{ runner.workspace }}
 
     steps:
       - name: Echo
-        run: echo $BUILD_TYPE $CXX11_ENABLED $COMPILER $DYNAWO_LIBRARY_TYPE
+        run: echo $BUILD_TYPE $CXX11_ENABLED $COMPILER $DYNAWO_LIBRARY_TYPE $TEST_ENV
 
       - name: Echo tests
         if: ${{ matrix.build-type == 'Debug' && matrix.library-type == 'SHARED' }}
