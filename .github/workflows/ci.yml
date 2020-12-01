@@ -19,7 +19,19 @@ jobs:
       - name: Update Docker Hub
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: echo Docker
+  macos:
+    name: MacOS
+    runs-on: macos-latest
 
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v1
+
+      - name: Pre-requisites
+        run: |
+          pip3 install lxml psutil
+          brew install automake gnu-sed
+          ln -s /usr/local/bin/gfortran-9 /usr/local/bin/gfortran
   # build-ubuntu:
   #      runs-on: ubuntu-latest
   #      env:
