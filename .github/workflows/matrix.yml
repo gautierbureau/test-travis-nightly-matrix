@@ -40,4 +40,6 @@ jobs:
         library-type: [SHARED, STATIC]
     steps:
       - name: Echo
-        run: echo $BUILD_TYPE $CXX11_ENABLED $COMPILER $DYNAWO_LIBRARY_TYPE
+        run: |
+          echo $BUILD_TYPE $CXX11_ENABLED $COMPILER $DYNAWO_LIBRARY_TYPE
+          test ! `uname` = Darwin || echo Darwin
